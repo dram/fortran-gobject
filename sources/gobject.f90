@@ -8,9 +8,9 @@ module gobject
   include "constants.f90"
 
   interface
-     subroutine g_object_get(object, property_name, value) bind(c)
+     subroutine g_object_get(object, property_name, value, sentinel) bind(c)
        use iso_c_binding, only: c_ptr
-       type(c_ptr), value :: object, property_name, value
+       type(c_ptr), value :: object, property_name, value, sentinel
      end subroutine g_object_get
   end interface
 end module gobject
